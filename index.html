@@ -7,66 +7,141 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f4f6f8;
+      color: #1a1a1a;
       margin: 0;
-      padding: 0;
     }
+
     header {
       background-color: #0d1b2a;
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    header img {
+      max-width: 120px;
+      margin-bottom: 10px;
     }
+
+    h1 {
+      margin: 10px 0 5px;
+      font-size: 2.2em;
+    }
+
     h2 {
       margin-top: 0;
       font-weight: normal;
       font-size: 1.2em;
       color: #ddd;
     }
+
     main {
-      padding: 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      padding: 30px 20px;
     }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      border-left: 5px solid #0d1b2a;
+      padding-left: 10px;
+      color: #0d1b2a;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #142c45;
+    }
+
     footer {
       background-color: #0d1b2a;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       margin-top: 40px;
+    }
+
+    .socials img {
+      width: 28px;
+      margin: 0 8px;
+      vertical-align: middle;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
 
 <header>
+  <img src="logo.png" alt="LegalCentra logo">
   <h1>LegalCentra</h1>
   <h2>Juridisch advies in het sociaal domein</h2>
 </header>
 
 <main>
-  <h3>Welkom bij LegalCentra</h3>
-  <p>
-    Wij bieden deskundig en toegankelijk juridisch advies aan cliënten binnen het sociaal domein. 
-    Of het nu gaat om bezwaarprocedures, uitkeringen, Wmo-zaken of bijstand: wij staan naast u.
-  </p>
+  <section>
+    <h3>Welkom bij LegalCentra</h3>
+    <p>
+      LegalCentra biedt betrokken en professioneel juridisch advies voor mensen die te maken krijgen met het sociaal domein. Wij helpen u bij het opkomen voor uw rechten in lastige situaties met overheidsinstanties.
+    </p>
+  </section>
 
-  <h3>Onze diensten</h3>
-  <ul>
-    <li>Bezwaar- en beroepsprocedures</li>
-    <li>Ondersteuning bij overheidskwesties (zoals UWV, gemeente)</li>
-    <li>Voorlichting over uw rechten</li>
-  </ul>
+  <section>
+    <h3>Onze expertise</h3>
+    <ul>
+      <li>Participatiewet</li>
+      <li>Jeugdwet</li>
+      <li>Wmo</li>
+      <li>Ziektewet</li>
+      <li>Urgentieprocedures</li>
+      <li>Bezwaar en beroep binnen het sociaal domein</li>
+      <li>Toeslagen, uitkeringen en hulpvragen</li>
+    </ul>
+  </section>
 
-  <h3>Contact</h3>
-  <p>
-    Neem contact op via <strong>info@legalcentra.nl</strong> of bel ons op <strong>06-12345678</strong>.
-  </p>
+  <section>
+    <h3>Contactformulier</h3>
+    <p>Vul onderstaand formulier in, dan nemen wij zo snel mogelijk contact met u op.</p>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="naam" placeholder="Uw naam" required>
+      <input type="tel" name="telefoon" placeholder="Telefoonnummer" required>
+      <textarea name="hulpvraag" placeholder="Omschrijf uw hulpvraag..." rows="5" required></textarea>
+      <button type="submit">Verzenden</button>
+    </form>
+  </section>
+
+  <section class="socials">
+    <h3>Social media (binnenkort online)</h3>
+    <p>
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn">
+    </p>
+  </section>
 </main>
 
 <footer>
