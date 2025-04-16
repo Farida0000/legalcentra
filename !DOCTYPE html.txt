@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LegalCentra – Juridisch Advies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    h2 {
+      margin-top: 0;
+      font-weight: normal;
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    footer {
+      background-color: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>LegalCentra</h1>
+  <h2>Juridisch advies in het sociaal domein</h2>
+</header>
+
+<main>
+  <h3>Welkom bij LegalCentra</h3>
+  <p>
+    Wij bieden deskundig en toegankelijk juridisch advies aan cliënten binnen het sociaal domein. 
+    Of het nu gaat om bezwaarprocedures, uitkeringen, Wmo-zaken of bijstand: wij staan naast u.
+  </p>
+
+  <h3>Onze diensten</h3>
+  <ul>
+    <li>Bezwaar- en beroepsprocedures</li>
+    <li>Ondersteuning bij overheidskwesties (zoals UWV, gemeente)</li>
+    <li>Voorlichting over uw rechten</li>
+  </ul>
+
+  <h3>Contact</h3>
+  <p>
+    Neem contact op via <strong>info@legalcentra.nl</strong> of bel ons op <strong>06-12345678</strong>.
+  </p>
+</main>
+
+<footer>
+  &copy; 2025 LegalCentra – Alle rechten voorbehouden
+</footer>
+
+</body>
+</html>
