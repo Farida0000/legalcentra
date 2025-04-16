@@ -12,21 +12,27 @@
       color: #1a1a1a;
       margin: 0;
     }
+    .logo-banner {
+      background-color: #0d1b2a;
+      text-align: center;
+      padding: 10px;
+    }
+    .logo-banner img {
+      max-height: 70px;
+    }
     header {
       background-color: #0d1b2a;
       color: white;
-      padding: 30px 20px;
+      padding: 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
       font-size: 2.5em;
-      font-weight: 600;
     }
     header p {
       margin-top: 5px;
       font-weight: 300;
-      font-size: 1.1em;
     }
     nav {
       background-color: #1e2e3e;
@@ -37,7 +43,6 @@
       color: white;
       padding: 14px 20px;
       text-decoration: none;
-      display: block;
       transition: background-color 0.3s;
     }
     nav a:hover {
@@ -58,19 +63,10 @@
     }
     h2 {
       color: #0d1b2a;
-      font-size: 1.8em;
-      margin-top: 0;
     }
     h3 {
       margin-top: 25px;
       color: #0d1b2a;
-      font-weight: 500;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
     }
     input, textarea, select {
       width: 100%;
@@ -79,6 +75,13 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+    input[type="file"] {
+      padding: 5px;
+    }
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
     button {
       background-color: #0d1b2a;
       color: white;
@@ -86,10 +89,20 @@
       border: none;
       border-radius: 4px;
       font-size: 1em;
+      margin-top: 20px;
       transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #1b2f4a;
+    }
+    .download-links a {
+      display: inline-block;
+      margin: 10px 10px 20px 0;
+      padding: 10px 20px;
+      background-color: #0d1b2a;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
     }
     footer {
       background-color: #0d1b2a;
@@ -101,6 +114,10 @@
   </style>
 </head>
 <body>
+
+<div class="logo-banner">
+  <img src="logo.png" alt="LegalCentra Logo">
+</div>
 
 <header>
   <h1>LegalCentra</h1>
@@ -119,7 +136,6 @@
   <p>
     Bent u het niet eens met een besluit van de gemeente, DUO, SVB, Belastingdienst of het UWV?
     LegalCentra biedt kosteloos juridisch advies en ondersteuning bij bezwaar- en beroepsprocedures binnen het sociaal domein.
-    Wij staan naast u wanneer overheidsregels onduidelijk worden of besluiten onterecht voelen.
     <strong>LegalCentra maakt het recht begrijpelijk én bereikbaar – voor iedereen.</strong>
   </p>
   <h3>Waarom kiezen voor LegalCentra?</h3>
@@ -135,22 +151,20 @@
 <section id="aanmelden">
   <h2>Aanmeldformulier – Gratis juridische hulp aanvragen</h2>
   <p>
-    Heeft u te maken met een afwijzing, terugvordering of ander besluit van de gemeente, DUO, UWV, SVB of Belastingdienst waarmee u het niet eens bent? 
-    Via dit formulier kunt u snel en kosteloos juridische ondersteuning aanvragen bij LegalCentra. Wij nemen binnen 3 werkdagen contact met u op.
+    Via dit formulier kunt u snel en kosteloos juridische ondersteuning aanvragen. LegalCentra neemt binnen 3 werkdagen contact met u op.
   </p>
 
   <form name="aanmelding-uitgebreid" method="POST" data-netlify="true">
     <h3>Persoonlijke gegevens</h3>
     <input type="text" name="naam" placeholder="Voor- en achternaam" required>
-    <input type="date" name="geboortedatum" placeholder="Geboortedatum" required>
+    <input type="date" name="geboortedatum" required>
     <input type="text" name="adres" placeholder="Straat en huisnummer" required>
     <input type="text" name="postcode" placeholder="Postcode en woonplaats" required>
     <input type="email" name="email" placeholder="E-mailadres" required>
     <input type="tel" name="telefoon" placeholder="Telefoonnummer" required>
 
     <h3>Bereikbaarheid</h3>
-    <label>Bent u ook bereikbaar buiten reguliere tijden?</label><br>
-    <label><input type="radio" name="bereikbaar" value="Ja"> Ja</label><br>
+    <label><input type="radio" name="bereikbaar" value="Ja"> Ja</label>
     <label><input type="radio" name="bereikbaar" value="Nee"> Nee</label>
 
     <h3>Instantie waartegen u bezwaar wilt maken</h3>
@@ -164,26 +178,21 @@
       <option value="Anders">Andere instantie</option>
     </select>
 
-    <h3>Korte omschrijving van uw situatie</h3>
+    <h3>Korte toelichting van uw bezwaar</h3>
     <textarea name="beschrijving" rows="5" placeholder="Omschrijf kort uw bezwaar of situatie..." required></textarea>
 
-    <h3>Upload hier relevante documenten (zoals het besluit waar u bezwaar tegen maakt)</h3>
+    <h3>Upload hier relevante documenten</h3>
     <input type="file" name="bijlage">
-<h3>Documenten</h3>
-<p>Download hier de benodigde documenten voor uw aanmelding:</p>
 
-<a href="algemene-voorwaarden.pdf" target="_blank" style="display:inline-block; background-color:#0d1b2a; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin: 5px 0;">
-  Algemene Voorwaarden (PDF)
-</a><br>
+    <h3>Documenten</h3>
+    <div class="download-links">
+      <a href="Algemenevoorwaarden.pdf" target="_blank">Algemene Voorwaarden (PDF)</a>
+      <a href="Machtigingsformulier.pdf" target="_blank">Machtigingsformulier (PDF)</a>
+    </div>
 
-<a href="machtigingsformulier.pdf" target="_blank" style="display:inline-block; background-color:#0d1b2a; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin: 5px 0;">
-  Machtigingsformulier (PDF)
-</a>
+    <label><input type="checkbox" name="akkoord" required> Ja, ik ga akkoord met de algemene voorwaarden</label><br>
+    <label><input type="checkbox" name="machtiging"> Ja, ik vul ook het machtigingsformulier in</label><br>
 
-    <label><input type="checkbox" name="voorwaarden" required> Ja, ik ga akkoord met de algemene voorwaarden</label><br>
-    <label><input type="checkbox" name="machtiging"> Ja, ik vul ook het machtigingsformulier in</label>
-
-    <br><br>
     <button type="submit">Verzenden</button>
   </form>
 </section>
@@ -191,15 +200,14 @@
 <section id="over">
   <h2>Over LegalCentra</h2>
   <p>
-    LegalCentra is gespecialiseerd in juridisch advies binnen het sociaal domein. Sinds 2015 zijn wij actief in dit werkveld en hebben wij waardevolle ervaring opgedaan met uiteenlopende rechtsgebieden zoals bijstand, Wmo, jeugdzorg en uitkeringsvraagstukken.
-    Wij geloven dat juridische hulp begrijpelijk, laagdrempelig en kosteloos moet zijn. Daarom is onze dienstverlening 100% gratis – zonder verborgen kosten of kleine lettertjes.
+    LegalCentra is gespecialiseerd in juridisch advies binnen het sociaal domein. Wij bieden hulp bij bezwaarprocedures rondom uitkeringen, Wmo, Jeugdwet, DUO en andere regelingen. Onze hulp is volledig gratis en laagdrempelig – wij zetten uw belang voorop.
   </p>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Neem contact met ons op via onderstaand e-mailadres. Binnenkort volgen ook onze social media kanalen en telefoonnummer.</p>
-  <p><strong>E-mailadres:</strong> info@legalcentra.nl</p>
+  <p><strong>Email:</strong> info@legalcentra.nl</p>
+  <p><em>Binnenkort ook via sociale media bereikbaar</em></p>
 </section>
 
 <footer>
@@ -208,8 +216,7 @@
 
 <script>
   function showTab(tabId) {
-    const tabs = document.querySelectorAll("section");
-    tabs.forEach(tab => tab.classList.remove("active"));
+    document.querySelectorAll("section").forEach(tab => tab.classList.remove("active"));
     document.getElementById(tabId).classList.add("active");
   }
 </script>
