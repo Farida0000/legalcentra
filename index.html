@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LegalCentra – Juridisch advies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -121,10 +120,8 @@
     Bent u het niet eens met een besluit van de gemeente, DUO, SVB, Belastingdienst of het UWV?
     LegalCentra biedt kosteloos juridisch advies en ondersteuning bij bezwaar- en beroepsprocedures binnen het sociaal domein.
     Wij staan naast u wanneer overheidsregels onduidelijk worden of besluiten onterecht voelen.
-    Toegankelijk, deskundig en volledig zonder kosten.
     <strong>LegalCentra maakt het recht begrijpelijk én bereikbaar – voor iedereen.</strong>
   </p>
-
   <h3>Waarom kiezen voor LegalCentra?</h3>
   <ul>
     <li>Volledig gratis juridische ondersteuning</li>
@@ -136,22 +133,47 @@
 </section>
 
 <section id="aanmelden">
-  <h2>Aanmeldformulier</h2>
-  <p>Vul onderstaand formulier in. Wij nemen binnen 3 werkdagen contact met u op.</p>
-  <form name="aanmelding" method="POST" data-netlify="true">
-    <input type="text" name="naam" placeholder="Uw volledige naam" required>
+  <h2>Aanmeldformulier – Gratis juridische hulp aanvragen</h2>
+  <p>
+    Heeft u te maken met een afwijzing, terugvordering of ander besluit van de gemeente, DUO, UWV, SVB of Belastingdienst waarmee u het niet eens bent? 
+    Via dit formulier kunt u snel en kosteloos juridische ondersteuning aanvragen bij LegalCentra. Wij nemen binnen 3 werkdagen contact met u op.
+  </p>
+
+  <form name="aanmelding-uitgebreid" method="POST" data-netlify="true">
+    <h3>Persoonlijke gegevens</h3>
+    <input type="text" name="naam" placeholder="Voor- en achternaam" required>
+    <input type="date" name="geboortedatum" placeholder="Geboortedatum" required>
+    <input type="text" name="adres" placeholder="Straat en huisnummer" required>
+    <input type="text" name="postcode" placeholder="Postcode en woonplaats" required>
     <input type="email" name="email" placeholder="E-mailadres" required>
     <input type="tel" name="telefoon" placeholder="Telefoonnummer" required>
-    <select name="instanties" required>
-      <option value="">Betreft uw situatie...</option>
-      <option>Gemeente</option>
-      <option>UWV</option>
-      <option>SVB</option>
-      <option>DUO</option>
-      <option>Belastingdienst</option>
-      <option>Anders</option>
+
+    <h3>Bereikbaarheid</h3>
+    <label>Bent u ook bereikbaar buiten reguliere tijden?</label><br>
+    <label><input type="radio" name="bereikbaar" value="Ja"> Ja</label><br>
+    <label><input type="radio" name="bereikbaar" value="Nee"> Nee</label>
+
+    <h3>Instantie waartegen u bezwaar wilt maken</h3>
+    <select name="instantie" required>
+      <option value="">Selecteer een instantie</option>
+      <option value="Gemeente">Gemeente</option>
+      <option value="UWV">UWV</option>
+      <option value="SVB">SVB</option>
+      <option value="DUO">DUO</option>
+      <option value="Belastingdienst">Belastingdienst</option>
+      <option value="Anders">Andere instantie</option>
     </select>
-    <textarea name="situatie" rows="5" placeholder="Omschrijf kort uw situatie" required></textarea>
+
+    <h3>Korte omschrijving van uw situatie</h3>
+    <textarea name="beschrijving" rows="5" placeholder="Omschrijf kort uw bezwaar of situatie..." required></textarea>
+
+    <h3>Upload hier relevante documenten (zoals het besluit waar u bezwaar tegen maakt)</h3>
+    <input type="file" name="bijlage">
+
+    <label><input type="checkbox" name="voorwaarden" required> Ja, ik ga akkoord met de algemene voorwaarden</label><br>
+    <label><input type="checkbox" name="machtiging"> Ja, ik vul ook het machtigingsformulier in</label>
+
+    <br><br>
     <button type="submit">Verzenden</button>
   </form>
 </section>
@@ -161,10 +183,6 @@
   <p>
     LegalCentra is gespecialiseerd in juridisch advies binnen het sociaal domein. Sinds 2015 zijn wij actief in dit werkveld en hebben wij waardevolle ervaring opgedaan met uiteenlopende rechtsgebieden zoals bijstand, Wmo, jeugdzorg en uitkeringsvraagstukken.
     Wij geloven dat juridische hulp begrijpelijk, laagdrempelig en kosteloos moet zijn. Daarom is onze dienstverlening 100% gratis – zonder verborgen kosten of kleine lettertjes.
-  </p>
-  <p>
-    Bij LegalCentra combineren we deskundigheid met een frisse, persoonlijke benadering. Wij luisteren naar uw verhaal, denken met u mee en zetten ons volledig in om uw rechten te beschermen.
-    LegalCentra – juridische hulp die wél bereikbaar is.
   </p>
 </section>
 
