@@ -15,10 +15,10 @@
     .logo-banner {
       background-color: #0d1b2a;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
     }
     .logo-banner img {
-      max-height: 70px;
+      max-height: 110px;
     }
     header {
       background-color: #0d1b2a;
@@ -28,7 +28,7 @@
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.2em;
     }
     header p {
       margin-top: 5px;
@@ -50,23 +50,31 @@
     }
     section {
       display: none;
-      max-width: 900px;
+      max-width: 960px;
       margin: 30px auto;
       background-color: white;
-      padding: 30px;
+      padding: 40px;
       border-left: 5px solid #0d1b2a;
       border-radius: 4px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     section.active {
       display: block;
     }
     h2 {
       color: #0d1b2a;
+      font-size: 1.8em;
     }
     h3 {
       margin-top: 25px;
       color: #0d1b2a;
+      font-weight: 500;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
     }
     input, textarea, select {
       width: 100%;
@@ -75,13 +83,6 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    input[type="file"] {
-      padding: 5px;
-    }
-    input[type="checkbox"] {
-      width: auto;
-      margin-right: 10px;
-    }
     button {
       background-color: #0d1b2a;
       color: white;
@@ -89,20 +90,10 @@
       border: none;
       border-radius: 4px;
       font-size: 1em;
-      margin-top: 20px;
       transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #1b2f4a;
-    }
-    .download-links a {
-      display: inline-block;
-      margin: 10px 10px 20px 0;
-      padding: 10px 20px;
-      background-color: #0d1b2a;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
     }
     footer {
       background-color: #0d1b2a;
@@ -111,12 +102,28 @@
       padding: 20px;
       margin-top: 40px;
     }
+    .separator {
+      margin: 40px 0 20px;
+      border-top: 1px solid #ccc;
+    }
+    .download-links a {
+      display: inline-block;
+      margin-right: 15px;
+      background-color: #0d1b2a;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .download-links a:hover {
+      background-color: #1b2f4a;
+    }
   </style>
 </head>
 <body>
 
 <div class="logo-banner">
-  <img src="logo.png" alt="LegalCentra Logo">
+  <img src="logo.png" alt="LegalCentra logo">
 </div>
 
 <header>
@@ -133,38 +140,40 @@
 
 <section id="home" class="active">
   <h2>Welkom bij LegalCentra</h2>
+  <p><strong>LegalCentra – Gratis juridisch advies bij vraagstukken binnen het sociaal domein</strong></p>
   <p>
-    Bent u het niet eens met een besluit van de gemeente, DUO, SVB, Belastingdienst of het UWV?
-    LegalCentra biedt kosteloos juridisch advies en ondersteuning bij bezwaar- en beroepsprocedures binnen het sociaal domein.
-    <strong>LegalCentra maakt het recht begrijpelijk én bereikbaar – voor iedereen.</strong>
+    Heeft u te maken met problemen rondom uw uitkering of krijgt u te maken met instanties zoals de gemeente, het UWV, de SVB, DUO of de Belastingdienst?
+    LegalCentra biedt kosteloze juridische ondersteuning bij bezwaar- en beroepsprocedures binnen het sociaal domein. 
+    Wij maken complexe regelgeving begrijpelijk en zorgen dat u niet alleen staat tegenover grote instanties. 
+    Betrokken, toegankelijk en volledig gratis – voor iedereen die juridische hulp nodig heeft.
   </p>
+
   <h3>Waarom kiezen voor LegalCentra?</h3>
   <ul>
-    <li>Volledig gratis juridische ondersteuning</li>
-    <li>Focus op sociale zekerheid, uitkeringen en bezwaarprocedures</li>
-    <li>Toegankelijk, duidelijk en persoonlijk contact</li>
-    <li>Snel, betrokken en zonder ingewikkeld gedoe</li>
-    <li>Uw belang staat altijd voorop</li>
+    <li>Volledig gratis juridische ondersteuning bij bezwaar en beroep</li>
+    <li>Gespecialiseerd in het sociaal zekerheidsrecht en uitkeringszaken</li>
+    <li>Persoonlijke en betrokken aanpak – wij luisteren en denken met u mee</li>
+    <li>Snelle, duidelijke communicatie – zonder juridisch jargon</li>
+    <li>Toegankelijk, transparant en oplossingsgericht</li>
   </ul>
+
+  <p>LegalCentra is jong, vernieuwend en gedreven om het verschil te maken. Wij geloven in rechtvaardigheid, in duidelijkheid, en in hulp die écht helpt.</p>
+  <p><strong>U staat er niet alleen voor. Wij staan naast u – deskundig, duidelijk en kosteloos.</strong></p>
 </section>
 
 <section id="aanmelden">
-  <h2>Aanmeldformulier – Gratis juridische hulp aanvragen</h2>
-  <p>
-    Via dit formulier kunt u snel en kosteloos juridische ondersteuning aanvragen. LegalCentra neemt binnen 3 werkdagen contact met u op.
-  </p>
-
+  <h2>Aanmeldformulier – Vraag gratis juridische hulp aan</h2>
   <form name="aanmelding-uitgebreid" method="POST" data-netlify="true">
     <h3>Persoonlijke gegevens</h3>
     <input type="text" name="naam" placeholder="Voor- en achternaam" required>
-    <input type="date" name="geboortedatum" required>
+    <input type="date" name="geboortedatum" placeholder="Geboortedatum" required>
     <input type="text" name="adres" placeholder="Straat en huisnummer" required>
     <input type="text" name="postcode" placeholder="Postcode en woonplaats" required>
     <input type="email" name="email" placeholder="E-mailadres" required>
     <input type="tel" name="telefoon" placeholder="Telefoonnummer" required>
 
-    <h3>Bereikbaarheid</h3>
-    <label><input type="radio" name="bereikbaar" value="Ja"> Ja</label>
+    <h3>Ook beschikbaar buiten kantooruren?</h3>
+    <label><input type="radio" name="bereikbaar" value="Ja"> Ja</label><br>
     <label><input type="radio" name="bereikbaar" value="Nee"> Nee</label>
 
     <h3>Instantie waartegen u bezwaar wilt maken</h3>
@@ -178,8 +187,8 @@
       <option value="Anders">Andere instantie</option>
     </select>
 
-    <h3>Korte toelichting van uw bezwaar</h3>
-    <textarea name="beschrijving" rows="5" placeholder="Omschrijf kort uw bezwaar of situatie..." required></textarea>
+    <h3>Uw hulpvraag of toelichting</h3>
+    <textarea name="beschrijving" rows="5" placeholder="Beschrijf kort uw situatie..." required></textarea>
 
     <h3>Upload hier relevante documenten</h3>
     <input type="file" name="bijlage">
@@ -190,9 +199,10 @@
       <a href="Machtigingsformulier.pdf" target="_blank">Machtigingsformulier (PDF)</a>
     </div>
 
-    <label><input type="checkbox" name="akkoord" required> Ja, ik ga akkoord met de algemene voorwaarden</label><br>
-    <label><input type="checkbox" name="machtiging"> Ja, ik vul ook het machtigingsformulier in</label><br>
+    <label><input type="checkbox" name="voorwaarden" required> Ja, ik ga akkoord met de algemene voorwaarden</label><br>
+    <label><input type="checkbox" name="machtiging"> Ja, ik vul ook het machtigingsformulier in</label>
 
+    <br><br>
     <button type="submit">Verzenden</button>
   </form>
 </section>
@@ -200,14 +210,32 @@
 <section id="over">
   <h2>Over LegalCentra</h2>
   <p>
-    LegalCentra is gespecialiseerd in juridisch advies binnen het sociaal domein. Wij bieden hulp bij bezwaarprocedures rondom uitkeringen, Wmo, Jeugdwet, DUO en andere regelingen. Onze hulp is volledig gratis en laagdrempelig – wij zetten uw belang voorop.
+    LegalCentra is opgericht vanuit een duidelijke missie: juridische hulp bereikbaar maken voor iedereen binnen het sociaal domein.
+    Sinds 2015 zijn wij actief in dit werkveld en hebben wij ervaring opgedaan met uiteenlopende rechtsgebieden, waaronder bijstand (Participatiewet), Wmo, jeugdhulp, kinderopvangtoeslag, studiefinanciering en overige sociale voorzieningen.
   </p>
+
+  <p>
+    Onze kracht ligt in het combineren van inhoudelijke kennis met oprechte betrokkenheid. Wij begrijpen dat juridische kwesties vaak gepaard gaan met stress, onzekerheid en frustratie. Daarom zorgen wij voor een laagdrempelige aanpak, waarin u zich gehoord en gesteund voelt.
+  </p>
+
+  <ul>
+    <li><strong>Toegankelijkheid</strong> – wij leggen complexe regels helder uit</li>
+    <li><strong>Betrokkenheid</strong> – u bent geen dossier, maar een mens met een verhaal</li>
+    <li><strong>Kwaliteit</strong> – wij werken zorgvuldig, doelgericht en in uw belang</li>
+    <li><strong>Eerlijkheid</strong> – geen kosten, geen vage voorwaarden, geen loze beloftes</li>
+  </ul>
+
+  <p>
+    Of u nu hulp nodig heeft bij een bezwaar tegen een besluit van de gemeente, een terugvordering van het UWV of een probleem met DUO of de Belastingdienst – wij helpen u graag.
+  </p>
+
+  <p><strong>LegalCentra – juridische hulp die wél werkt. Voor iedereen.</strong></p>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p><strong>Email:</strong> info@legalcentra.nl</p>
-  <p><em>Binnenkort ook via sociale media bereikbaar</em></p>
+  <p><em>Binnenkort ook bereikbaar via sociale media en telefoon.</em></p>
 </section>
 
 <footer>
