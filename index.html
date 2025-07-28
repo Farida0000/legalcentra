@@ -1,211 +1,494 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LegalCentra – Juridisch advies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f6f8;
-      color: #1a1a1a;
-      margin: 0;
-    }
-    .logo-banner {
-      background-color: #0d1b2a;
-      text-align: center;
-      padding: 20px;
-    }
-    .logo-banner img {
-      max-height: 110px;
-    }
-    header {
-      background-color: #0d1b2a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-    header p {
-      margin-top: 5px;
-      font-weight: 300;
-    }
-    nav {
-      background-color: #1e2e3e;
-      display: flex;
-      justify-content: center;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    nav a:hover {
-      background-color: #31465b;
-    }
-    section {
-      display: none;
-      max-width: 960px;
-      margin: 30px auto;
-      background-color: white;
-      padding: 40px;
-      border-left: 5px solid #0d1b2a;
-      border-radius: 4px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    section.active {
-      display: block;
-    }
-    h2 {
-      color: #0d1b2a;
-      font-size: 1.8em;
-    }
-    h3 {
-      margin-top: 25px;
-      color: #0d1b2a;
-      font-weight: 500;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #0d1b2a;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #1b2f4a;
-    }
-    footer {
-      background-color: #0d1b2a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .download-links a {
-      display: inline-block;
-      margin-right: 15px;
-      background-color: #0d1b2a;
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .download-links a:hover {
-      background-color: #1b2f4a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalCentra - Juridische Hulp bij Bezwaarzaken</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: {
+                            light: '#f5f0e6',
+                            DEFAULT: '#e8e0d0',
+                            dark: '#d8ceba',
+                        },
+                        nude: {
+                            light: '#f2e6da',
+                            DEFAULT: '#e6d2c0',
+                            dark: '#d9bea8',
+                        },
+                        navy: {
+                            light: '#546a8c',
+                            DEFAULT: '#2c3e50',
+                            dark: '#1a2530',
+                        },
+                        black: {
+                            light: '#4a4a4a',
+                            DEFAULT: '#333333',
+                            dark: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nude-gradient {
+            background: linear-gradient(135deg, #e6d2c0 0%, #f2e6da 100%);
+        }
+        
+        .beige-gradient {
+            background: linear-gradient(135deg, #d8ceba 0%, #f5f0e6 100%);
+        }
+        
+        .navy-gradient {
+            background: linear-gradient(135deg, #2c3e50 0%, #546a8c 100%);
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-shadow {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-beige-light">
+    <!-- Navigatie -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-navy-DEFAULT">Legal<span class="text-nude-dark">Centra</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-black-light hover:text-navy-DEFAULT font-medium">Home</a>
+                    <a href="#diensten" class="text-black-light hover:text-navy-DEFAULT font-medium">Diensten</a>
+                    <a href="#over-ons" class="text-black-light hover:text-navy-DEFAULT font-medium">Over Ons</a>
+                    <a href="#werkwijze" class="text-black-light hover:text-navy-DEFAULT font-medium">Werkwijze</a>
+                    <a href="#contact" class="text-black-light hover:text-navy-DEFAULT font-medium">Contact</a>
+                    <a href="#aanmelden" class="bg-navy-DEFAULT hover:bg-navy-light text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-custom">Aanmelden</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-button" class="text-black-light hover:text-navy-DEFAULT">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobiel menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-black-light hover:bg-beige-light hover:text-navy-DEFAULT rounded-md">Home</a>
+                <a href="#diensten" class="block px-3 py-2 text-black-light hover:bg-beige-light hover:text-navy-DEFAULT rounded-md">Diensten</a>
+                <a href="#over-ons" class="block px-3 py-2 text-black-light hover:bg-beige-light hover:text-navy-DEFAULT rounded-md">Over Ons</a>
+                <a href="#werkwijze" class="block px-3 py-2 text-black-light hover:bg-beige-light hover:text-navy-DEFAULT rounded-md">Werkwijze</a>
+                <a href="#contact" class="block px-3 py-2 text-black-light hover:bg-beige-light hover:text-navy-DEFAULT rounded-md">Contact</a>
+                <a href="#aanmelden" class="block px-3 py-2 bg-navy-DEFAULT text-white rounded-md mt-2">Aanmelden</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="logo-banner">
-  <img src="logo.png" alt="LegalCentra logo">
-</div>
+    <!-- Hero Sectie -->
+    <section id="home" class="relative bg-beige-DEFAULT py-16 md:py-28">
+        <div class="absolute inset-0 overflow-hidden">
+            <svg class="absolute bottom-0 left-0 w-full text-white" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="currentColor" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-dark mb-6 leading-tight">
+                    Gratis juridische hulp bij bezwaarzaken
+                </h1>
+                <div class="text-base sm:text-lg text-black-light mb-8 max-w-2xl mx-auto space-y-4">
+                    <p class="font-medium">Gratis hulp bij bezwaar</p>
+                    <p>Niet eens met een besluit van de gemeente, het UWV of de SVB? Wij helpen u kosteloos met het indienen van bezwaar. U krijgt deskundige ondersteuning van begin tot eind.</p>
+                    <p>Laat ons u helpen om uw recht te halen.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#aanmelden" class="navy-gradient text-white font-medium px-6 py-3 sm:px-8 sm:py-4 rounded-md text-center shadow-lg hover:opacity-90 transition duration-300">
+                        Gratis Intakegesprek
+                    </a>
+                    <a href="#diensten" class="bg-transparent text-navy-DEFAULT border-2 border-navy-DEFAULT font-medium px-6 py-3 sm:px-8 sm:py-4 rounded-md text-center hover:bg-navy-DEFAULT hover:text-white transition duration-300">
+                        Onze Diensten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<header>
-  <h1>LegalCentra</h1>
-  <p>Juridisch advies zonder kosten – helder, betrokken en dichtbij</p>
-</header>
+    <!-- Diensten Sectie -->
+    <section id="diensten" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-4">Onze Gratis Juridische Diensten</h2>
+                <div class="w-20 h-1 bg-nude-dark mx-auto mb-6"></div>
+                <p class="text-base sm:text-lg text-black-light max-w-3xl mx-auto">
+                    Wij bieden kosteloze juridische ondersteuning bij verschillende soorten bezwaarzaken binnen het sociaal domein.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Dienst 1 -->
+                <div class="bg-beige-light rounded-lg p-6 sm:p-8 shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-navy-DEFAULT">
+                    <h3 class="text-xl font-bold text-navy-DEFAULT mb-3 text-center">Bezwaar Participatiewet</h3>
+                    <p class="text-black-light mb-4 text-center">
+                        Wij stellen kosteloos bezwaarbrieven op bij afwijzingen van bijzondere bijstand, uitkeringen of terugvorderingen.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Bijstandsuitkeringen</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Bijzondere bijstand</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Terugvorderingen</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#aanmelden" class="inline-block text-navy-DEFAULT font-medium hover:text-navy-light hover:underline">
+                            Meer informatie →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Dienst 2 -->
+                <div class="bg-beige-light rounded-lg p-6 sm:p-8 shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-navy-DEFAULT">
+                    <h3 class="text-xl font-bold text-navy-DEFAULT mb-3 text-center">Bezwaar tegen het UWV</h3>
+                    <p class="text-black-light mb-4 text-center">
+                        Gratis hulp bij bezwaar tegen beslissingen over arbeidsongeschiktheid, ziektewet of uitkering.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>WIA/WGA beoordelingen</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ziektewet kwesties</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>WW-uitkeringen</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#aanmelden" class="inline-block text-navy-DEFAULT font-medium hover:text-navy-light hover:underline">
+                            Meer informatie →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Dienst 3 -->
+                <div class="bg-beige-light rounded-lg p-6 sm:p-8 shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-navy-DEFAULT">
+                    <h3 class="text-xl font-bold text-navy-DEFAULT mb-3 text-center">Bezwaar SVB of DUO</h3>
+                    <p class="text-black-light mb-4 text-center">
+                        Hulp bij bezwaar tegen besluiten rond kinderbijslag, AOW of studiefinanciering.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>AOW-kwesties</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Kinderbijslag</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-nude-dark mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Studiefinanciering</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#aanmelden" class="inline-block text-navy-DEFAULT font-medium hover:text-navy-light hover:underline">
+                            Meer informatie →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<nav>
-  <a href="#" onclick="showTab('home')">Home</a>
-  <a href="#" onclick="showTab('aanmelden')">Aanmelden</a>
-  <a href="#" onclick="showTab('over')">Over LegalCentra</a>
-  <a href="#" onclick="showTab('contact')">Contact</a>
-</nav>
+    <!-- Over Ons Sectie -->
+    <section id="over-ons" class="py-12 sm:py-16 bg-beige-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-6 text-center">Iedereen verdient juridische hulp</h2>
+                <div class="w-20 h-1 bg-nude-dark mx-auto mb-6"></div>
+                <p class="text-base sm:text-lg text-black-light mb-6 text-center">
+                    LegalCentra helpt mensen die vastlopen in het systeem van de sociale zekerheid.
+                </p>
+                <p class="text-base sm:text-lg text-black-light mb-8 text-center">
+                    Wij geloven in een eerlijke behandeling en bieden gratis professionele ondersteuning, ongeacht uw inkomen.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-10">
+                    <div class="bg-white rounded-lg p-3 sm:p-4 shadow-md text-center">
+                        <h3 class="font-medium text-navy-DEFAULT">Persoonlijke aanpak</h3>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 sm:p-4 shadow-md text-center">
+                        <h3 class="font-medium text-navy-DEFAULT">Snelle service</h3>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 sm:p-4 shadow-md text-center">
+                        <h3 class="font-medium text-navy-DEFAULT">Expertise</h3>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 sm:p-4 shadow-md text-center">
+                        <h3 class="font-medium text-navy-DEFAULT">Betrokken</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="home" class="active">
-  <h2>Welkom bij LegalCentra</h2>
-  <p><strong>LegalCentra – Gratis juridisch advies bij vraagstukken binnen het sociaal domein</strong></p>
-  <p>
-    Heeft u te maken met problemen rondom uw uitkering of krijgt u te maken met instanties zoals de gemeente, het UWV, de SVB, DUO of de Belastingdienst?
-    LegalCentra biedt kosteloze juridische ondersteuning bij bezwaar- en beroepsprocedures binnen het sociaal domein.
-    Wij maken complexe regelgeving begrijpelijk en zorgen dat u niet alleen staat tegenover grote instanties.
-    Betrokken, toegankelijk en volledig gratis – voor iedereen die juridische hulp nodig heeft.
-  </p>
+    <!-- Werkwijze Sectie -->
+    <section id="werkwijze" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-4">Onze Werkwijze</h2>
+                <div class="w-20 h-1 bg-nude-dark mx-auto mb-6"></div>
+                <p class="text-base sm:text-lg text-black-light max-w-3xl mx-auto">
+                    In vier eenvoudige stappen helpen wij u gratis bij uw bezwaarzaak.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stap 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 bg-navy-DEFAULT rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">1</div>
+                    <div class="bg-beige-light rounded-lg p-5 sm:p-6 shadow-lg h-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-navy-DEFAULT mb-3 text-center">Intake Gesprek</h3>
+                        <p class="text-black-light text-center">
+                            We beginnen met een vrijblijvend intakegesprek om uw situatie te bespreken.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Stap 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 bg-navy-DEFAULT rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">2</div>
+                    <div class="bg-beige-light rounded-lg p-5 sm:p-6 shadow-lg h-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-navy-DEFAULT mb-3 text-center">Analyse & Advies</h3>
+                        <p class="text-black-light text-center">
+                            We analyseren uw zaak en geven u een helder juridisch advies.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Stap 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 bg-navy-DEFAULT rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">3</div>
+                    <div class="bg-beige-light rounded-lg p-5 sm:p-6 shadow-lg h-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-navy-DEFAULT mb-3 text-center">Bezwaarschrift Opstellen</h3>
+                        <p class="text-black-light text-center">
+                            We stellen een professioneel bezwaarschrift op en dienen dit tijdig in.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Stap 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 bg-navy-DEFAULT rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">4</div>
+                    <div class="bg-beige-light rounded-lg p-5 sm:p-6 shadow-lg h-full">
+                        <h3 class="text-lg sm:text-xl font-bold text-navy-DEFAULT mb-3 text-center">Begeleiding Procedure</h3>
+                        <p class="text-black-light text-center">
+                            We begeleiden u tijdens de gehele bezwaarprocedure, inclusief hoorzittingen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3>Waarom kiezen voor LegalCentra?</h3>
-  <ul>
-    <li>Volledig gratis juridische ondersteuning bij bezwaar en beroep</li>
-    <li>Gespecialiseerd in het sociaal zekerheidsrecht en uitkeringszaken</li>
-    <li>Persoonlijke en betrokken aanpak – wij luisteren en denken met u mee</li>
-    <li>Snelle, duidelijke communicatie – zonder juridisch jargon</li>
-    <li>Toegankelijk, transparant en oplossingsgericht</li>
-  </ul>
+    <!-- Aanmeldformulier Sectie met Tally.so -->
+    <section id="aanmelden" class="py-12 sm:py-16 bg-beige-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="p-6 sm:p-8">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-4 text-center">Wilt u bezwaar maken?</h2>
+                    <p class="text-base sm:text-lg text-center text-black-light mb-6 sm:mb-8">Wij helpen u kosteloos van intake tot beslissing.</p>
+                    <div class="w-20 h-1 bg-nude-dark mx-auto mb-6 sm:mb-8"></div>
+                    
+                    <div class="text-center mb-6 sm:mb-8">
+                        <a href="#aanmeldformulier" class="navy-gradient text-white font-medium px-6 py-3 sm:px-8 sm:py-4 rounded-md text-center shadow-lg hover:opacity-90 transition duration-300 inline-block">
+                            Start intakeformulier
+                        </a>
+                    </div>
+                    
+                    <!-- Tally.so embed -->
+                    <div id="aanmeldformulier" class="w-full overflow-hidden">
+                        <script async src="https://tally.so/widgets/embed.js"></script>
+                        <iframe data-tally-src="https://tally.so/embed/mRyZ24?alignLeft=1&hideTitle=1&transparentBackground=1" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Aanmeldformulier Legalcentra"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <p>LegalCentra is jong, vernieuwend en gedreven om het verschil te maken. Wij geloven in rechtvaardigheid, in duidelijkheid, en in hulp die echt helpt.</p>
-  <p><strong>U staat er niet alleen voor. Wij staan naast u – deskundig, duidelijk en kosteloos.</strong></p>
-</section>
+    <!-- Contact Sectie -->
+    <section id="contact" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-4">Contact</h2>
+                <div class="w-20 h-1 bg-nude-dark mx-auto mb-6"></div>
+                <p class="text-base sm:text-lg text-black-light max-w-3xl mx-auto">
+                    Heeft u vragen? Neem contact met ons op.
+                </p>
+            </div>
+            
+            <div class="max-w-lg mx-auto bg-beige-light rounded-lg p-6 sm:p-8 shadow-lg text-center">
+                <h3 class="text-xl font-bold text-navy-DEFAULT mb-3">E-mail</h3>
+                <p class="text-black-light mb-6">
+                    <a href="mailto:info@legalcentra.nl" class="text-navy-DEFAULT hover:underline">info@legalcentra.nl</a>
+                </p>
+                
+                <h3 class="text-xl font-bold text-navy-DEFAULT mb-3 mt-6 sm:mt-8">Volg ons</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://instagram.com/legalcentra" class="text-navy-DEFAULT hover:text-nude-dark transition duration-300">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com/@legalcentra" class="text-navy-DEFAULT hover:text-nude-dark transition duration-300">
+                        <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="aanmelden">
-  <h2>Aanmeldformulier – Vraag gratis juridische hulp aan</h2>
+    <!-- Footer -->
+    <footer class="bg-navy-DEFAULT text-white py-10 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">LegalCentra</h3>
+                    <p class="text-gray-300 mb-4">
+                        Gratis juridische hulp bij bezwaarzaken in de sociale zekerheid.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/legalcentra" class="text-gray-300 hover:text-nude-light transition duration-300">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com/@legalcentra" class="text-gray-300 hover:text-nude-light transition duration-300">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Diensten</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#diensten" class="text-gray-300 hover:text-nude-light transition duration-300">Participatiewet</a></li>
+                        <li><a href="#diensten" class="text-gray-300 hover:text-nude-light transition duration-300">UWV Bezwaren</a></li>
+                        <li><a href="#diensten" class="text-gray-300 hover:text-nude-light transition duration-300">SVB & DUO Zaken</a></li>
+                        <li><a href="#diensten" class="text-gray-300 hover:text-nude-light transition duration-300">Juridisch Advies</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-nude-light transition duration-300">Home</a></li>
+                        <li><a href="#over-ons" class="text-gray-300 hover:text-nude-light transition duration-300">Over Ons</a></li>
+                        <li><a href="#werkwijze" class="text-gray-300 hover:text-nude-light transition duration-300">Werkwijze</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-nude-light transition duration-300">Contact</a></li>
+                        <li><a href="#aanmelden" class="text-gray-300 hover:text-nude-light transition duration-300">Aanmelden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 sm:mt-10 pt-6">
+                <div class="flex flex-col sm:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 sm:mb-0">
+                        &copy; 2023 LegalCentra. Alle rechten voorbehouden.
+                    </p>
+                    <div class="flex space-x-4 sm:space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-nude-light text-sm transition duration-300">Privacyverklaring</a>
+                        <a href="#" class="text-gray-400 hover:text-nude-light text-sm transition duration-300">Algemene Voorwaarden</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <script async src="https://tally.so/widgets/embed.js"></script>
-  <iframe data-tally-src="https://tally.so/embed/mRyZ24?alignLeft=1&hideTitle=1&transparentBackground=1" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Aanmeldformulier Legalcentra"></iframe>
-</section>
-
-
-<section id="over">
-  <h2>Over LegalCentra</h2>
-  <p>
-    LegalCentra is opgericht vanuit een duidelijke missie: juridische hulp bereikbaar maken voor iedereen binnen het sociaal domein.
-    Sinds 2015 zijn wij actief in dit werkveld en hebben wij ervaring opgedaan met uiteenlopende rechtsgebieden, waaronder bijstand (Participatiewet), Wmo, jeugdhulp, kinderopvangtoeslag, studiefinanciering en overige sociale voorzieningen.
-  </p>
-
-  <p>
-    Onze kracht ligt in het combineren van inhoudelijke kennis met oprechte betrokkenheid. Wij begrijpen dat juridische kwesties vaak gepaard gaan met stress, onzekerheid en frustratie. Daarom zorgen wij voor een laagdrempelige aanpak, waarin u zich gehoord en gesteund voelt.
-  </p>
-
-  <ul>
-    <li><strong>Toegankelijkheid</strong> – wij leggen complexe regels helder uit</li>
-    <li><strong>Betrokkenheid</strong> – u bent geen dossier, maar een mens met een verhaal</li>
-    <li><strong>Kwaliteit</strong> – wij werken zorgvuldig, doelgericht en in uw belang</li>
-    <li><strong>Eerlijkheid</strong> – geen kosten, geen vage voorwaarden, geen loze beloftes</li>
-  </ul>
-
-  <p>
-    Of u nu hulp nodig heeft bij een bezwaar tegen een besluit van de gemeente, een terugvordering van het UWV of een probleem met DUO of de Belastingdienst – wij helpen u graag.
-  </p>
-
-  <p><strong>LegalCentra – juridische hulp die wel werkt. Voor iedereen.</strong></p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p><strong>Email:</strong> info@legalcentra.nl</p>
-  <p><em>Binnenkort ook bereikbaar via sociale media en telefoon.</em></p>
-</section>
-
-<footer>
-  &copy; 2025 LegalCentra – Juridisch advies
-</footer>
-
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll("section").forEach(tab => tab.classList.remove("active"));
-    document.getElementById(tabId).classList.add("active");
-  }
-</script>
-
-</body>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96648b20763eb8de',t:'MTc1MzcwNzQ1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
