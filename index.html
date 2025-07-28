@@ -6,6 +6,8 @@
     <title>LegalCentra - Juridische Hulp bij Bezwaarzaken</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tally.so script direct in de head -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -355,21 +357,16 @@
                             Start intakeformulier
                         </a>
                     </div>
-                   <!-- Tally.so embed -->
-<div id="aanmeldformulier" style="width:100%; max-width:100%; padding:2rem 0;">
-  <script async src="https://tally.so/widgets/embed.js"></script>
-  <iframe 
-    data-tally-src="https://tally.so/embed/mRyZ24?alignLeft=1&hideTitle=1&transparentBackground=1" 
-    loading="lazy" 
-    width="100%" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0" 
-    title="Aanmeldformulier">
-  </iframe>
-</div>
- </section>
+                    
+                    <!-- Tally.so embed - vereenvoudigde implementatie -->
+                    <div id="aanmeldformulier" class="w-full" style="min-height:1025px;">
+                        <iframe data-tally-src="https://tally.so/embed/mRyZ24?alignLeft=1&hideTitle=1&dynamicHeight=1" width="100%" height="1025" frameborder="0" marginheight="0" marginwidth="0" title="Intakeformulier"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Sectie -->
     <section id="contact" class="py-12 sm:py-16 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -493,6 +490,23 @@
                 }
             });
         });
+        
+        // Tally.so script - direct aanroepen na laden van de pagina
+        document.addEventListener('DOMContentLoaded', function() {
+            var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+            
+            // Extra poging om het formulier te laden na een korte vertraging
+            setTimeout(function() {
+                if(typeof Tally !== 'undefined') {
+                    Tally.loadEmbeds();
+                } else {
+                    document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+                        e.src = e.dataset.tallySrc;
+                    });
+                }
+            }, 1000);
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96648b20763eb8de',t:'MTc1MzcwNzQ1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9664fba087d1fba3',t:'MTc1MzcxMjA2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
