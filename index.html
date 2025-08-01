@@ -572,6 +572,87 @@
     </style>
 </head>
 <body class="bg-beige-light">
+    <!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalCentra - Juridische Hulp bij Bezwaarzaken</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tally.so script direct in de head -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: {
+                            light: '#f5f0e6',
+                            DEFAULT: '#e8e0d0',
+                            dark: '#d8ceba',
+                        },
+                        nude: {
+                            light: '#f2e6da',
+                            DEFAULT: '#e6d2c0',
+                            dark: '#d9bea8',
+                        },
+                        navy: {
+                            light: '#546a8c',
+                            DEFAULT: '#2c3e50',
+                            dark: '#1a2530',
+                        },
+                        black: {
+                            light: '#4a4a4a',
+                            DEFAULT: '#333333',
+                            dark: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nude-gradient {
+            background: linear-gradient(135deg, #e6d2c0 0%, #f2e6da 100%);
+        }
+        
+        .beige-gradient {
+            background: linear-gradient(135deg, #d8ceba 0%, #f5f0e6 100%);
+        }
+        
+        .navy-gradient {
+            background: linear-gradient(135deg, #2c3e50 0%, #546a8c 100%);
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-shadow {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-beige-light">
     <!-- Navigatie -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -582,15 +663,10 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-black-light hover:text-navy-DEFAULT font-medium">Home</a>
-                    <a href="#diensten" class="text-black-light hover:text-navy-DEFAULT font-medium">Diensten</a>
-                    <a href="#over-ons" class="text-black-light hover:text-navy-DEFAULT font-medium">Over Ons</a>
-                    <a href="#werkwijze" class="text-black-light hover:text-navy-DEFAULT font-medium">Werkwijze</a>
                     <a href="#contact" class="text-black-light hover:text-navy-DEFAULT font-medium">Contact</a>
-                    <a href="#aanmelden" class="bg-navy-DEFAULT hover:bg-navy-light text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-custom">Aanmelden</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://www.facebook.com/profile.php?id=" target="_blank" class="text-black-light hover:text-navy-DEFAULT transition duration-300">
+                    <a href="https://www.facebook.com/profile.php?id=61566094107408" target="_blank" class="text-black-light hover:text-navy-DEFAULT transition duration-300">
                         <i class="fab fa-facebook text-xl"></i>
                     </a>
                 </div>
@@ -603,13 +679,8 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="#home" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">Home</a>
-                    <a href="#diensten" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">Diensten</a>
-                    <a href="#over-ons" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">Over Ons</a>
-                    <a href="#werkwijze" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">Werkwijze</a>
                     <a href="#contact" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">Contact</a>
-                    <a href="#aanmelden" class="block mx-3 my-2 bg-navy-DEFAULT hover:bg-navy-light text-white px-4 py-2 rounded-md font-medium text-center">Aanmelden</a>
-                    <a href="https://www.facebook.com/profile.php?id=" target="_blank" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">
+                    <a href="https://www.facebook.com/profile.php?id=61566094107408" target="_blank" class="block px-3 py-2 text-black-light hover:text-navy-DEFAULT font-medium">
                         <i class="fab fa-facebook mr-2"></i>Facebook
                     </a>
                 </div>
@@ -651,7 +722,7 @@
                     </a>
 
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/profile.php?id=61579082814404" target="_blank" rel="noopener noreferrer" aria-label="Volg ons op Facebook" class="text-navy-DEFAULT hover:text-nude-dark transition duration-300">
+                    <a href="https://www.facebook.com/profile.php?id=61566094107408" target="_blank" rel="noopener noreferrer" aria-label="Volg ons op Facebook" class="text-navy-DEFAULT hover:text-nude-dark transition duration-300">
                         <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.729 0 1.323-.597 1.323-1.325V1.325C24 .597 23.403 0 22.675 0z"/>
                         </svg>
@@ -668,8 +739,9 @@
             mobileMenu.classList.toggle('active');
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96849035f07e9fab',t:'MTc1NDA0MzIxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9684b23845fb511b',t:'MTc1NDA0NDYwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
    <!-- Footer -->
 <footer class="bg-navy-DEFAULT text-white py-10 sm:py-12">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
